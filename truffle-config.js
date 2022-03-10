@@ -22,7 +22,8 @@
 //
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
-
+const HDWalletProvider = require('@truffle/hdwallet-provider');
+const keythereum = require("keythereum");
 module.exports = {
   /**
    * Networks define how you connect to your ethereum client and let you set the
@@ -35,6 +36,21 @@ module.exports = {
    */
 
   networks: {
+    pluto: {
+      provider: ()=>{
+        // 0x0C6AA0908296b189F80b6e0398E0f7100Ad4f8d3
+        return new HDWalletProvider({ privateKeys:['f5e2df034b9bfa532d42907d5e6f10bbb6a04f483b4451fbaa46efa38bf6c649'], 
+        providerOrUrl:"http://35.87.102.111:36891",
+        chainId: 666,
+        gas:4e7,
+        gasPrice: 1e9})//   '0xf5e2df034b9bfa532d42907d5e6f10bbb6a04f483b4451fbaa46efa38bf6c649', "http://35.87.102.111:36891",{})
+      },
+      network_id: "*",
+      chainId:666,
+      gasPrice: 2e9,
+      gas:8e6,
+      skipDryRun: true,
+    },
     // Useful for testing. The `development` name is special - truffle uses it by default
     // if it's defined here and no other network is specified at the command line.
     // You should run a client (like ganache-cli, geth or parity) in a separate terminal

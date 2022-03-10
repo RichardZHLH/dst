@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/RichardZHLH/dst#readme",
   "dependencies": {
-    "@openzeppelin/contracts": "^3.4.2"
+    "@openzeppelin/contracts": "^3.4.2",
+    "@truffle/hdwallet-provider": "^2.0.3",
+    "keythereum": "^1.2.0"
   }
 }
